@@ -1,0 +1,263 @@
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el encabezado */
+header {
+  background-color: #E74C3C;
+  color: white;
+  padding: 20px;
+}
+
+.padre {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.encabezado_navegable {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.item {
+  margin-right: 15px;
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Inicio */
+.inicio {
+  display: flex;
+  flex-flow: column;
+  justify-content:center;
+  align-items: center;
+  background-color: #FDF2E9;
+}
+
+#titulo {
+  display: flex;
+  justify-content: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  color: #E74C3C;
+  animation: fadeIn 2s ease-in-out;
+}
+
+#subtitulo {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  color: #6C3483;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  align-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  color: #333;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.plato {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+#menu {
+  text-align: center;
+  padding: 15px;
+  background-color: #FDF2E9;
+}
+
+/* Estilos para las secciones */
+section {
+  padding: 40px;
+}
+
+#inicio {
+  background-color: #f5f5f5;
+  padding: 50px 0;
+}
+
+#titulo {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#subtitulo {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #777;
+  margin-bottom: 40px;
+}
+#historia {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#historia h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.parrafos {
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  width: 100%
+
+}
+
+.parrafos p {
+  display: flex;
+  width: 20%;
+  margin-bottom: 20px;
+  font-size: 38px;
+  padding: 10%;
+}
+
+
+
+#reservas input,
+#reservas textarea,
+#reservas button {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px;
+}
+
+#reservas button {
+  background-color: #E74C3C;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#contacto ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos responsivos */
+
+/* Breackpoint para 480px */
+@media (max-width: 480px) {
+*{font-size: small;}
+  #titulo {
+    font-size: 3.5rem;
+  }
+
+  #subtitulo {
+    font-size: 1.8rem;
+  }
+
+  .encabezado_navegable {
+    height: auto;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+  }
+}
+
+/* Breackpoint para 768px */
+@media (max-width: 768px) {
+ *{font-size: small !important;}
+  #titulo {
+    font-size: 3rem;
+  }
+
+  #subtitulo {
+    font-size: 1.6rem;
+  }
+
+  .encabezado_navegable {
+    height: auto;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+  }
+
+.nombreplatos {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+.parrafos p {
+  width: 100%;
+
+}
+.plato img:hover {
+  transform: scale(1.1);
+}
+}
+
+
+/* Breackpoint para 1280px */
+@media (max-width: 1280px) {
+  #titulo {
+    font-size: 3.5rem;
+  }
+
+  #subtitulo {
+    font-size: 3.5rem;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.plato img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.plato img:hover {
+  transform: scale(1.9);
+}

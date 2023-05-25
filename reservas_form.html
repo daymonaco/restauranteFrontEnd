@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form name="reservas">
+        <fieldset>
+            <legend>Tu reserva</legend>
+            <!--h2>Tu reserva</h2> -->
+            <label for="comensales">Seleccioná la cantidad de comensales</label><br>
+            <input type="range" id="comensales" min="1" max="12" list="markers" onchange= "changeValue(this.value)"><span id = "output"></span>
+            <datalist id="markers">
+              <option value="1"></option>
+              <option value="2"></option>
+              <option value="3"></option>
+              <option value="4"></option>
+              <option value="5"></option>
+              <option value="6"></option>
+              <option value="7"></option>
+              <option value="8"></option>
+              <option value="9"></option>
+              <option value="10"></option>
+              <option value="11"></option>
+              <option value="12"></option>
+            </datalist>
+              <script>
+                let output = document.getElementById('output');
+                  function changeValue(newVal) {
+                     output.innerHTML = newVal;
+                  }
+              </script>
+            <br><br><label for="sucursales">Elegí la sucursal</label><br>
+            <input type="radio" id="sucursal1" name="sucursales" value="Sucursal 1" placeholder="Sucursal" required>
+            <label for="sucursal1">Sucursal 1</label><br>
+            <input type="radio" id="sucursal2" name="sucursales" value="Sucursal 2">
+            <label for="sucursal2">Sucursal 2</label><br>
+            <input type="radio" id="sucursal3" name="sucursales" value="Sucursal 3">
+            <label for="sucursal3">Sucursal 3</label><br><br>
+            <label for="fecha">Seleccioná la fecha de tu reserva</label><br>
+            <input type="date" id="fecha" required>
+              <script>
+              var today = new Date();
+              var dd = today.getDate();
+              var mm = today.getMonth() + 1;
+              var yyyy = today.getFullYear();
+              
+              if (dd < 10) {
+                 dd = '0' + dd;
+              }
+              
+              if (mm < 10) {
+                 mm = '0' + mm;
+              } 
+                  
+              today = yyyy + '-' + mm + '-' + dd;
+              document.getElementById("fecha").setAttribute("min", today);
+              </script><br><br>
+            <label for="horario">Elegí el horario de tu reserva</label><br>
+            <select id="horario" name="horario" required><br>
+                <option selected="selected" disabled="disabled" value=""></option>
+                <option value="12:00>">12:00</option>
+                <option value="12:00>">12:30</option>
+                <option value="12:00>">13:00</option>
+                <option value="12:00>">13:30</option>
+                <option value="12:00>">14:00</option>
+                <option value="12:00>">20:00</option>
+                <option value="12:00>">20:30</option>
+                <option value="12:00>">21:00</option>
+                <option value="12:00>">21:30</option>
+                <option value="12:00>">22:00</option>
+            </select>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Tus datos de contacto</legend>
+            <!--h2>Tus datos de contacto</h2> -->
+            <label for="nombre"></label><input type="text" id="nombre" placeholder="Nombre" required><br><br>
+            <label for="apellido"></label><input type="text" id="apellido" placeholder="Apellido" required><br><br>
+            <label for="email"></label><input type="email" id="email" placeholder="Email" required><br><br>
+            <label for="telefono"></label><input type="tel" id="telefono" placeholder="Teléfono" pattern="[0-9]{10}" required>
+        </fieldset><br>
+        <input type="submit" onclick='return validateForm()' value="Reservar">
+          <script>
+          function validateForm() {
+          if (!document.querySelector("input[name='sucursales']:checked")) {
+              alert("Por favor, elegí una sucursal");
+              return false;
+          }
+          if (document.forms['reservas']['nombre'].value == "") {
+            alert("Por favor, ingresá tu nombre");
+            return false;
+          }
+          if (document.forms['reservas']['apellido'].value == "") {
+            alert("Por favor, ingresá tu apellido");
+            return false;
+          }
+          if (document.forms['reservas']['email'].value == "") {
+            alert("Por favor, ingresá tu dirección de email");
+            return false;
+          }
+          if (document.forms['reservas']['telefono'].value == "") {
+            alert("Por favor, ingresá tu número de teléfono");
+            return false;
+          }
+          }
+          </script>
+    </form>
+</body>
+</html>
